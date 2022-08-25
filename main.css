@@ -331,3 +331,30 @@ html{
     padding: 10px 16px;
     float: right;
 }
+
+/*Map*/
+
+.map .map-member{
+    width: 100%;
+}
+
+.footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer .footer-img{
+    letter-spacing: 0.5px;
+}
+
+.footer .footer-content{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color:#000;
+    opacity: 0.6;
+}
+
+.footer-content a{
+    color: #000;
+}
