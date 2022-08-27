@@ -87,7 +87,7 @@
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-dsc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="#" class="place-button">Buy Tickets</a>
+                                    <button class="place-button js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="col col-third">
@@ -96,7 +96,7 @@
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-dsc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="#" class="place-button">Buy Tickets</a>
+                                    <button class="place-button js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="col col-third">
@@ -105,7 +105,7 @@
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-dsc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="#" class="place-button">Buy Tickets</a>
+                                    <button class="place-button js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="clear"></div>
@@ -169,5 +169,76 @@
             </div>
         </div>
 
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+
+                <div class="modal-close "><i class="ti-close js-ti-close"></i></div>
+
+                <header class="modal-header">
+                    <i class="ti-briefcase"></i>
+                    Tickets
+                </header>
+
+                <div class="modal-body">
+                    <label for="quantity" class="modal-lable">
+                        <i class="ti-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </label><br>
+                    <input type="text" id="quantity" class="modal-input" placeholder="How many?">
+                    <br>
+                    <label for="ticket-email" class="modal-lable">
+                        <i class="ti-user"></i>
+                        Send To
+                    </label><br>
+                    <input type="email" id="ticket-email" class="modal-input" placeholder="Enter email"><br>
+                    <button class="buy-ticket">
+                        PAY
+                        <i class="ti-check"></i>
+                    </button>
+                </div>
+
+                <footer class="modal-footer">
+                    <p class="modal-help">Need <a href="#">help?</a></p>
+                </footer>
+
+            </div>
+        </div>
+
+        <script>
+            const buyBtns = document.querySelectorAll('.js-buy-ticket')
+            const modal = document.querySelector('.modal')
+            const modalContainer = document.querySelector('.js-modal-container')
+
+            //hàm hiển thị class modal bằng cách thêm class open 
+            function showBuyTickets(){
+                modal.classList.add('open')
+            }
+
+            //lặp qua từng thẻ button và nghe hành vi click 
+            for(const buyBtn of buyBtns){
+                buyBtn.addEventListener('click', showBuyTickets)
+            }
+
+            //Hàm ẩn class modal
+            function closeBuyTickets(){
+                modal.classList.remove('open')
+            }
+            
+            const closebtn = document.querySelector('.js-ti-close')
+
+            //nghe hành vi click của class js-ti-close
+            closebtn.addEventListener('click',closeBuyTickets)
+
+            //Nhấn ra bên ngoài thì buyticket sẽ mất
+            const jsModal = document.querySelector('.js-modal')
+
+
+            jsModal.addEventListener('click',closeBuyTickets)
+
+            //Chống hiện tượng nổi bọt 
+            modalContainer.addEventListener('click',function(event){
+                event.stopPropagation()
+            })
+        </script>
     </body>
 </html>
