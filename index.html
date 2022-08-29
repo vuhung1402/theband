@@ -12,18 +12,18 @@
     <body>
 
         <div class="main">
-            <div class="header">
+            <div class="header" id="header">
                 <ul class="nav">
-                    <li><a href="#">Home</a></li>
+                    <li id="home" ><a href="#">Home</a></li>
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a href="">
+                        <a href="#" id="more-menu">
                             More
                             <i class="ti-angle-down"></i>
                         </a>
-                        <ul class="subnav">
+                        <ul class="subnav" id="js-subnav">
                             <li><a href="#">Merchandise</a></li>
                             <li><a href="#">Extras</a></li>
                             <li><a href="#">Media</a></li>
@@ -34,6 +34,10 @@
 
                 <div class="button-icon">
                     <i class="ti-search"></i>
+                </div>
+
+                <div class="mobile-menu-btn" id="mobile-menu">
+                    <i class="ti-menu"></i>
                 </div>
             </div>
 
@@ -205,11 +209,13 @@
 
             </div>
         </div>
-
+        <!--Script nhấn vào button buy ticket-->
         <script>
             const buyBtns = document.querySelectorAll('.js-buy-ticket')
             const modal = document.querySelector('.modal')
             const modalContainer = document.querySelector('.js-modal-container')
+
+            
 
             //hàm hiển thị class modal bằng cách thêm class open 
             function showBuyTickets(){
@@ -241,6 +247,25 @@
             modalContainer.addEventListener('click',function(event){
                 event.stopPropagation()
             })
+        </script>
+
+        <!--Script for menu taskbar in responsive-->
+        <script>
+            var header = document.getElementById('header')
+            var mobileMenuBtn = document.getElementById('mobile-menu')
+            var headerHeight = header.clientHeight
+
+            mobileMenuBtn.onclick = function(){
+                var isClosed = header.clientHeight === headerHeight
+
+                if(isClosed){
+                    header.style.height='auto'
+                }
+                else{
+                    header.style.height = null
+                }
+            }            
+
         </script>
     </body>
 </html>

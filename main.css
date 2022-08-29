@@ -60,12 +60,12 @@ html{
 /*Header*/
 .header{
     height: 46.5px;
+    width: 100%;
     background-color: black;
     position: fixed;
     top: 0;
-    right: 0;
-    left: 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 .header .nav{
@@ -76,8 +76,6 @@ html{
     position: relative;
     display: inline-block;
 }
-
-
 
 .nav > li > a{
     color: white;
@@ -97,7 +95,7 @@ html{
 
 .nav .subnav {
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     top: 100%;
     display: none;
 }
@@ -111,8 +109,8 @@ html{
 }
 
 .nav li:hover .subnav{
-    display: block;
     color: #000;
+    display: block;
 }
 
 .subnav li a{
@@ -120,7 +118,8 @@ html{
 }
 
 
-.header .button-icon{
+.header .button-icon, 
+.header .mobile-menu-btn{
     color: #fff;
     line-height: 46.5px;
     font-size: 20px;
@@ -130,6 +129,12 @@ html{
 
 .button-icon:hover{
     background-color: #f44336;
+    color: #000;
+}
+
+.mobile-menu-btn:hover{
+    background-color: #ccc;
+    color: #000;
 }
 
 
@@ -141,7 +146,7 @@ html{
     background-color: rgba(240, 241, 246, 0.5);
     color: white;
     position: relative;
-    background-image: url(https://www.w3schools.com/w3images/chicago.jpg);
+    background-image: url(./img/chicago.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -149,19 +154,16 @@ html{
 
 .slider .paragraph{
     position: absolute;
-    bottom: 0;
-    left: 40%;
-}
-
-.paragraph{
     text-align: center;
+    bottom: 47px;
+    width: 100%;
+ }
+
+.paragraph h1{
     margin-bottom: 10px;
 }
 
-.paragraph p{
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
+
 
 /*Content*/
 
@@ -173,7 +175,8 @@ html{
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 16px;
+    max-width: 100%;
 }
 
 .content .section-heading{

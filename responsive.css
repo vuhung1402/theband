@@ -1,7 +1,37 @@
 /*Mobile*/
 
+@media (min-width:1024px) {
+    .header{
+        overflow: visible;
+    }
+
+    .mobile-menu-btn{
+        display: none;
+    }
+
+    
+}
+
 @media (max-width:740px) {
     .nav  li {
         display: block;
+    }
+
+    .header .button-icon{
+        display: none;
+    }
+
+    .header .mobile-menu-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .header .nav {
+        display: block
+    }
+
+    #home{
+        width: 86px;
     }
 }
