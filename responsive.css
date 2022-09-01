@@ -1,4 +1,4 @@
-/*Mobile*/
+/*pc*/
 
 @media (min-width:1024px) {
     .header{
@@ -12,10 +12,8 @@
     
 }
 
+/*Mobile*/
 @media (max-width:740px) {
-    .nav  li {
-        display: block;
-    }
 
     .header .button-icon{
         display: none;
@@ -31,7 +29,57 @@
         display: block
     }
 
-    #home{
-        width: 86px;
+    .nav  li {
+        display: block;
+        border: 1px solid #ccc;
+    }
+
+    .nav li:first-child{
+        display: inline-block;
+        border: none;
+    }
+
+    .nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+
+    .subnav > li > a{
+        color: #fff;
+        padding-left: 30px;
+    }
+    
+    .subnav > li:first-child{
+        display: block;
+    }
+
+    .content .content-section {
+        padding: 40px 16px;
+    }
+    .content .member-list{
+        display: block;
+    }
+
+    .content .member-img{
+        width: 230px;
+        margin-bottom: 30px;
+    }
+
+    .col-third{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .col-half{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .contact-info{
+        margin-bottom: 20px;
+    }
+
+    .mt-8 {
+        margin-top: 0 !important;
     }
 }
